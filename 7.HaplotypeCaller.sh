@@ -13,3 +13,12 @@ do
 --native-pair-hmm-threads 50
 done
 ################开始运行:7.  GATK 变异检测（HaplotypeCaller，推荐） ################################
+# Compress with bgzip (this will create .gz files)
+for file in *.gatk.vcf; do
+    bgzip -c "$file" > "${file}.gz"
+    # Index the compressed file
+    bcftools index "${file}.gz"
+done
+
+# Now merge the compressed files
+bcftools merge *.gatk.vcf.gz -o merged.vcf --threads 60
