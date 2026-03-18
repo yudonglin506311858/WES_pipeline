@@ -22,3 +22,4 @@ done
 
 # Now merge the compressed files
 bcftools merge *.gatk.vcf.gz -o merged.vcf --threads 60
+bcftools filter -e 'QUAL<30 || DP<10' merged.vcf -o filtered.vcf 
