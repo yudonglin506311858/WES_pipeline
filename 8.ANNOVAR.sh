@@ -11,6 +11,11 @@ perl /data/yudonglin/software/annovar/annotate_variation.pl -buildver hg19 -down
 perl /data/yudonglin/software/annovar/annotate_variation.pl -buildver hg19 -downdb clinvar_20220320 humandb/
 
 
+wget http://www.openbioinformatics.org/annovar/download/hg19_gnomad211_exome.txt.gz
+wget http://www.openbioinformatics.org/annovar/download/hg19_clinvar_20220320.txt.gz
+
+
+
 perl /data/yudonglin/software/annovar/table_annovar.pl \
 filtered.vcf /data/yudonglin/software/annovar/humandb/ \
 -buildver hg19 \
