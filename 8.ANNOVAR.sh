@@ -26,3 +26,4 @@ filtered.vcf /data/yudonglin/software/annovar/humandb/ \
 -nastring . \
 -vcfinput \
 -thread 20
+
