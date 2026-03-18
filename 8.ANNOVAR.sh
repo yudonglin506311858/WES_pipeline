@@ -27,3 +27,16 @@ filtered.vcf /data/yudonglin/software/annovar/humandb/ \
 -vcfinput \
 -thread 20
 
+#############从 VCF 重新构建 MAF#############
+for s in *gatk.vcf; do
+    perl /data/yudonglin/software/annovar/table_annovar.pl $s /data/yudonglin/software/annovar/humandb/ \
+    -buildver hg19 \
+    -out ${s%.vcf} \
+    -remove \
+    -protocol refGene,gnomad211_exome,clinvar_20220320 \
+    -operation g,f,f \
+    -nastring . \
+    -vcfinput -thread 20
+done
+
+
