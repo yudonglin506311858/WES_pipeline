@@ -23,3 +23,24 @@ done
 # Now merge the compressed files
 bcftools merge *.gatk.vcf.gz -o merged.vcf --threads 60
 bcftools filter -e 'QUAL<30 || DP<10' merged.vcf -o filtered.vcf 
+
+(rnaseq) yudonglin@ubuntu:/data9/yudonglin/zyy/WES/vcf$ bcftools query -l merged.vcf
+E10
+E16
+E17
+E4
+E9
+EMP1
+M10
+M11
+M12
+M14
+M1
+M3_1
+M3_2
+M6
+M9
+P12
+P13
+P14
+
